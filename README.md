@@ -24,7 +24,7 @@ sudo apt install gnucobol
 sudo emerge open-cobol
 ```
 
-For other distros, as well as Windows and Mac users, you can download GnuCOBOL [here](https://gnucobol.sourceforge.io/).
+For other distros, as well as Windows and Mac users, you can download GnuCOBOL [here](https://gnucobol.sourceforge.io/).  
 Other COBOL compilers may work too (perhaps).
 
 ## Compiling
