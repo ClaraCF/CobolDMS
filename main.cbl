@@ -101,7 +101,7 @@
 
 
          DMS-TO-DEGREES-PARA.
-         DISPLAY "                  > DMS to Degrees <    ".
+         DISPLAY "       > DMS to Degrees <    ".
          DISPLAY "    Enter degrees (XXX): " WITH NO ADVANCING.
          ACCEPT WS-DEGREES.
          DISPLAY "    Enter minutes (XX): " WITH NO ADVANCING.
