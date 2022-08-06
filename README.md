@@ -28,6 +28,12 @@ For other distros, as well as Windows and Mac users, you can download GnuCOBOL [
 Other COBOL compilers may work too (perhaps).
 
 ## Compiling
+First, you can get the repo by running:
+```bash
+git clone https://github.com/ClaraCF/CobolDMS
+cd CobolDMS
+```
+
 To compile this project you may run the following command:
 ```bash
 cobc -O2 -x main.cbl -o CobolDMS
