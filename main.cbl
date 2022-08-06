@@ -7,9 +7,10 @@
          01 WS-DEGREES PIC 999V9999.
          01 WS-DMS-TEMP1 PIC 999V999.
          01 WS-DMS-TEMP2 PIC 999V999.
-         01 WS-DMS-DEGREES PIC 999.
-         01 WS-DMS-MINUTES PIC 99.
-         01 WS-DMS-SECONDS PIC 99V999.
+         01 WS-DMS-DEGREES PIC ZZ9.
+         01 WS-DMS-MINUTES PIC Z9.
+         01 WS-DMS-MINUTES-NUMERIC PIC 99.
+         01 WS-DMS-SECONDS PIC 99.99.
 
        PROCEDURE DIVISION.
          MENU-PARA.
@@ -70,9 +71,9 @@
 
 
          DEGREES-TO-DMS-PARA.
-         DISPLAY "    > Degrees to DMS <    ".
-           DISPLAY "    Enter value in degrees (XXX.XXX): "
-           WITH NO ADVANCING.
+         DISPLAY "            > Degrees to DMS <    ".
+         DISPLAY "    Enter value in degrees (XXX.XXX): "
+         WITH NO ADVANCING.
          ACCEPT WS-DEGREES.
 
       * For the degrees use the whole number part of the decimal
@@ -84,7 +85,9 @@
          MOVE WS-DMS-TEMP1(1:2) TO WS-DMS-MINUTES.
 
       * For the seconds multiply the remaining decimal by 60
-         COMPUTE WS-DMS-TEMP1 = WS-DMS-TEMP1 - (WS-DMS-MINUTES * 10).
+         MOVE WS-DMS-MINUTES TO WS-DMS-MINUTES-NUMERIC.
+         COMPUTE WS-DMS-TEMP1 = WS-DMS-TEMP1 -
+         (WS-DMS-MINUTES-NUMERIC * 10).
          MULTIPLY 6 BY WS-DMS-TEMP1.
          MOVE WS-DMS-TEMP1 TO WS-DMS-SECONDS.
 
@@ -102,6 +105,8 @@
          HELP-PARA.
          DISPLAY "    > This help menu is still under work <    ".
          DISPLAY "      Sorry ):".
+         DISPLAY "      PLEASE SEND HELP".
+         DISPLAY "      WHY AM I EVEN DOING THIS?".
          GO TO SUBMENU-PARA.
 
 
