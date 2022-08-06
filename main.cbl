@@ -5,12 +5,14 @@
          WORKING-STORAGE SECTION.
          01 WS-SELECTION PIC 9 VALUE 3.
          01 WS-DEGREES PIC 999V9999.
+         01 WS-MINUTES PIC 999V9999.
+         01 WS-SECONDS PIC 999V9999.
          01 WS-DMS-TEMP1 PIC 999V999.
          01 WS-DMS-TEMP2 PIC 999V999.
          01 WS-DMS-DEGREES PIC ZZ9.
          01 WS-DMS-MINUTES PIC Z9.
          01 WS-DMS-MINUTES-NUMERIC PIC 99.
-         01 WS-DMS-SECONDS PIC 99.99.
+         01 WS-DMS-SECONDS PIC 99V99.
 
        PROCEDURE DIVISION.
          MENU-PARA.
@@ -98,7 +100,18 @@
 
 
          DMS-TO-DEGREES-PARA.
-         DISPLAY "    > DMS to Degrees <    ".
+         DISPLAY "                  > DMS to Degrees <    ".
+         DISPLAY "    Enter degrees (XXX): " WITH NO ADVANCING.
+         ACCEPT WS-DEGREES.
+         DISPLAY "    Enter minutes (XX): " WITH NO ADVANCING.
+         ACCEPT WS-MINUTES.
+         DISPLAY "    Enter seconds (XX.XXX): " WITH NO ADVANCING.
+         ACCEPT WS-SECONDS.
+
+         COMPUTE WS-DEGREES = WS-DEGREES + (WS-MINUTES / 60) +
+           (WS-SECONDS / 3600).
+
+         DISPLAY "    "WS-DEGREES"°".
          GO TO SUBMENU-PARA.
 
 
