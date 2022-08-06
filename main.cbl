@@ -21,8 +21,8 @@
          DISPLAY "Please, select an option from below:".
          DISPLAY "[0] Convert degrees to DMS notation".
          DISPLAY "[1] Convert DMS notation to degrees".
-         DISPLAY "[2] Help".
-         DISPLAY "[3] Exit".
+      *  DISPLAY "[2] Help".
+         DISPLAY "[2] Exit".
          DISPLAY " ".
          DISPLAY ">>> " WITH NO ADVANCING.
          ACCEPT WS-SELECTION.
@@ -37,10 +37,10 @@
                WHEN WS-SELECTION = 1
                    GO TO DMS-TO-DEGREES-PARA
 
-               WHEN WS-SELECTION = 2
-                   GO TO HELP-PARA
+      *     WHEN WS-SELECTION = 2
+      *            GO TO HELP-PARA
 
-               WHEN WS-SELECTION = 3
+               WHEN WS-SELECTION = 2
                    STOP RUN
 
                WHEN OTHER
@@ -116,12 +116,12 @@
          GO TO SUBMENU-PARA.
 
 
-         HELP-PARA.
-         DISPLAY "    > This help menu is still under work <    ".
-         DISPLAY "      Sorry ):".
-         DISPLAY "      PLEASE SEND HELP".
-         DISPLAY "      WHY AM I EVEN DOING THIS?".
-         GO TO SUBMENU-PARA.
+      *  HELP-PARA.
+      *  DISPLAY "    > This help menu is still under work <    ".
+      *  DISPLAY "      Sorry ):".
+      *  DISPLAY "      PLEASE SEND HELP".
+      *  DISPLAY "      WHY AM I EVEN DOING THIS?".
+      *  GO TO SUBMENU-PARA.
 
 
        STOP RUN.
