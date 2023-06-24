@@ -21,7 +21,7 @@ sudo pacman -S gnucobol
 sudo apt install gnucobol
 
 # Gentoo
-sudo emerge open-cobol
+sudo emerge -v dev-lang/gnucobol
 ```
 
 For other distros, as well as Windows and Mac users, you can download GnuCOBOL [here](https://gnucobol.sourceforge.io/).  
